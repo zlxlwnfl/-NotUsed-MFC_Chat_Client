@@ -5,6 +5,11 @@
 #pragma once
 
 #include "CConnectSocket.h"
+#include "CFormSignIn.h"
+#include "CFormSignUp.h"
+#include "CFormChat.h"
+#include "CFormChatList.h"
+#include "DTO_ChatList.cpp"
 
 // CMFCChatClientDlg 대화 상자
 class CMFCChatClientDlg : public CDialogEx
@@ -33,5 +38,20 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-	afx_msg void OnBnClickedOk();
+	CFormSignIn			m_formSignIn;
+	CFormSignUp			m_formSignUp;
+	CFormChatList		m_formChatList;
+	CWnd*			m_pwndShow;
+	CString		userId;
+	map<CString, DTOChatList> userChatMap;
+
+	afx_msg void OnDestroy();
+	LRESULT OnChangeForm(WPARAM wParam, LPARAM lParam);
+	LRESULT OnSocketSend(WPARAM wParam, LPARAM lParam);
+	LRESULT OnChatSentenceGet(WPARAM wParam, LPARAM lParam);
+	LRESULT OnUserChatListDemand(WPARAM wParam, LPARAM lParam);
+	LRESULT OnUserChatListGet(WPARAM wParam, LPARAM lParam);
+	CTabCtrl m_tabMain;
+	afx_msg void OnTcnSelchangeTabMain(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnClose();
 };

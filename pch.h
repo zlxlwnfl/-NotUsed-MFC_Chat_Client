@@ -9,5 +9,20 @@
 
 // 여기에 미리 컴파일하려는 헤더 추가
 #include "framework.h"
+#include <afxwin.h>
+#include <afxwin.h>
+#include <afxcontrolbars.h>
 
 #endif //PCH_H
+#include <afxwin.h>
+#include <afxcontrolbars.h>
+#include <afxcontrolbars.h>
+
+#define	UM_CHANGEFORM				WM_USER + 1
+#define UM_SOCKETSEND				WM_USER + 2
+#define UM_SIGNUPFORMAT				WM_USER + 3
+#define UM_SIGNINFORMAT				WM_USER + 4
+#define UM_CHATDEMAND				WM_USER + 5
+#define UM_CHATSENTENCEGET			WM_USER + 6
+#define UM_CHATLISTUSERDEMAND		WM_USER + 7
+#define UM_CHATLISTUSERGET			WM_USER + 8

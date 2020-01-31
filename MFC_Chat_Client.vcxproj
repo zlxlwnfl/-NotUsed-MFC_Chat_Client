@@ -94,6 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CallingConvention>Cdecl</CallingConvention>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -190,7 +191,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CConnectSocket.h" />
+    <ClInclude Include="CFormChat.h" />
+    <ClInclude Include="CFormChatList.h" />
+    <ClInclude Include="CFormChatListUser.h" />
+    <ClInclude Include="CFormSignIn.h" />
+    <ClInclude Include="CFormSignUp.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="json.h" />
     <ClInclude Include="MFC_Chat_Client.h" />
     <ClInclude Include="MFC_Chat_ClientDlg.h" />
     <ClInclude Include="pch.h" />
@@ -199,6 +206,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CConnectSocket.cpp" />
+    <ClCompile Include="CFormChat.cpp" />
+    <ClCompile Include="CFormChatList.cpp" />
+    <ClCompile Include="CFormChatListUser.cpp" />
+    <ClCompile Include="CFormSignIn.cpp" />
+    <ClCompile Include="CFormSignUp.cpp" />
+    <ClCompile Include="DTO_ChatList.cpp" />
+    <ClCompile Include="jsoncpp.cpp" />
     <ClCompile Include="MFC_Chat_Client.cpp" />
     <ClCompile Include="MFC_Chat_ClientDlg.cpp" />
     <ClCompile Include="pch.cpp">
