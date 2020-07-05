@@ -56,7 +56,6 @@ void CFormChat::OnBnClickedButtonChat()
 	Json::Value value;
 	value["type"] = 5;
 	value["chatId"] = string(CT2CA(chatId.operator LPCWSTR()));
-	value["userId"] = string(CT2CA(clientDlg->userId.operator LPCWSTR()));
 	value["chatStr"] = string(CT2CA(m_strEditChat.operator LPCWSTR()));	// CString -> string
 
 	Json::FastWriter fastWriter;

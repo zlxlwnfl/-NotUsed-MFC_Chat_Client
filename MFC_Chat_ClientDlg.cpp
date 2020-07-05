@@ -61,7 +61,7 @@ BOOL CMFCChatClientDlg::OnInitDialog()
 	
 	// 소켓 설정
 	socket.Create();
-	if (socket.Connect(_T("192.168.242.133"), 8080) == FALSE) {
+	if (socket.Connect(_T("192.168.179.1"), 8080) == FALSE) {
 		if (GetLastError() != WSAEWOULDBLOCK) {
 			AfxMessageBox(_T("failed to connect server!"));
 			PostQuitMessage(0);
@@ -215,7 +215,6 @@ LRESULT CMFCChatClientDlg::OnChatSentenceGet(WPARAM wParam, LPARAM lParam) {
 LRESULT CMFCChatClientDlg::OnUserChatListDemand(WPARAM wParam, LPARAM lParam) {
 	Json::Value value;
 	value["type"] = 6;
-	value["userId"] = string(CT2CA(userId.operator LPCWSTR()));	// CString -> string
 
 	Json::FastWriter fastWriter;
 	string str = fastWriter.write(value);
@@ -284,7 +283,7 @@ LRESULT CMFCChatClientDlg::OnUserChatListGet(WPARAM wParam, LPARAM lParam) {
 void CMFCChatClientDlg::OnClose()
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
-	socket.OnClose(0);
+	shutdown(socket, SD_BOTH);
 
 	CDialogEx::OnClose();
 }
